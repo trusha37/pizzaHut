@@ -1,0 +1,202 @@
+<html>
+    <title>PizzaHut</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+    <link rel="stylesheet" href="css/style.css">
+<script>
+  function validateForm() {
+              let x = document.forms["myForm"]["fName"].value;
+              let y = document.forms["myForm"]["lName"].value;
+  
+              let email_id = document.forms["myForm"]["email-ID"].value;
+              let pass1 = document.forms["myForm"]["pass"].value;
+              let pass2 = document.forms["myForm"]["cpass"].value;
+  
+              const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+              let numbers = /[0-9]/g;
+              let alp = /[a-z]/g;
+              let alp1 = /[A-Z]/g;
+              let pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+              if (x === "") {
+                  alert("First Name must be filled out");
+                  return false;
+              }
+              else if (y === "") {
+                  alert("Last Name must be filled out");
+                  return false;
+              }
+              else if (y.match(numbers) || x.match(numbers)) {
+                  alert("there should be no digits in first and last name")
+                  return false;
+              }
+              else if(y.match(specialChars) || x.match(specialChars)){
+                  alert("there should be no special charcters in first and last name")
+                  return false;
+              }
+  
+              else if (!email_id.substring(-10, -9).match('@') === null || !email_id.substring(-4,-1).match('.com') === null||
+                  !email_id.substring(-9,-4).match(alp) === null){
+                  alert("invalid email id, should be in format of XXXXXXXXXXXXX@XXXXX.com")
+              }
+          }
+  </script>
+  
+<body>
+
+<!-- Navbar -->
+<div class="w3-top w3-bar w3-xlarge w3-black w3-opacity-min">
+    <a class="w3-bar-item w3-button" onclick="Btn1()">HOME</a>
+    <a class="w3-bar-item w3-button" onclick="Btn2()">SPECIALS</a>
+    <a class="w3-bar-item w3-button" onclick="Btn3()">MENU</a>
+    <a class="w3-bar-item w3-button" onclick="Btn4()">ABOUT US</a>
+    <a class="w3-bar-item w3-button" onclick="Btn5()">CONTACT US</a>
+</div>
+
+<!-- Header image -->
+<section id="b1">
+<div id="home" class="w3-container w3-black w3-xxlarge w3-padding-64">
+    <image src="img/t1.jpg" width="950" height="800"></image>
+    <div class="w3-display-top">
+    <span class="w3-tag w3-xlarge">Open from 11am to 11pm</span>
+    </div>
+</div>
+</section>
+
+<!-- Specials -->
+<section id="b2">
+    <div id="special" class="w3-container w3-black w3-xxlarge w3-padding-64">
+        <h1 class="w3-center w3-jumbo w3-padding-32">SPECIAL OFFERS</h1>
+        <image src="img/t2.jpg" width="950" height="400"><br>
+        <image src="img/t3.jpg" width="950" height="400"><br>
+        <image src="img/t5.jpg" width="950" height="400"></image>
+    </div>
+</section>
+
+<!-- Menu -->
+<section id="b3">
+    <div id="menu" class="w3-container w3-black w3-xxlarge w3-padding-64">
+        <h1 class="w3-center w3-jumbo w3-padding-32">MENU</h1>
+        <div class="w3-row w3-center w3-border w3-border-dark-grey">
+            <a href="#ss"><div class="w3-third w3-padding-large w3-hover-red">SOUPS & SALADS</div></a>
+            <a href="#bp"><div class="w3-third w3-padding-large w3-hover-red">BREADS & PIZZAS</div></a>
+            <a href="#db"><div class="w3-third w3-padding-large w3-hover-red">DESSERTS & BEVERAGES</div></a>
+        </div>
+
+        <h1 id="ss" class="w3-center w3-white w3-padding-32">SOUPS & SALADS</h1>
+        <h2><b>Creame of Tomato Soup</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.200</span></h2>
+        <hr color="red">
+        <h2><b>Hot 'n' Sour Soup</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.200</span></h2>
+        <hr color="red">
+        <h2><b>Munchow Soup</b> <span class="w3-tag w3-red w3-round">Popular</span><span class="w3-right w3-tag w3-dark-grey w3-round">Rs.200</span></h2>
+        <p class="w3-text-grey"> </p>Serves 2<p>
+        <hr color="red">
+        <h2><b>Sweet Corn Soup</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.200</span></h2>
+        <p class="w3-text-grey"> </p>Serves 2<p>
+        <hr color="red">
+        <h2><b>Russian Salad</b><span class="w3-tag w3-red w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.250</span></h2>
+        <p class="w3-text-grey"></p><p>
+        <hr color="red">
+        <h2><b>Mexican Salad</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.250</span></h2>
+        <p class="w3-text-grey"></p><p>
+        <hr color="red">
+        <h2><b>Indian Style Salad</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.250</span></h2>
+        <p class="w3-text-grey"></p><p>
+        <hr color="red">
+        
+
+        <h1 id="bp" class="w3-center w3-white w3-padding-32">BREADS & PIZZAS</h1>
+        <h2><b>Margherita Pizza</b><span class="w3-tag w3-red w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.250</span></h2>
+        <p class="w3-text-grey"></p><p>Thick Crust Base with special sauce and lots of cheese</p>
+        <hr color="red">
+        <h2><b>Farmer's Pick</b><span class="w3-tag w3-red w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.300</span></h2>
+        <p class="w3-text-grey"></p><p>Herbed Onion,green,red and yellow capsicum & baby corn</p>
+        <hr color="red">
+        <h2><b>Tandoori Onion</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.270</span></h2>
+        <p class="w3-text-grey"></p><p>Herbed Onion with tandoori sauce</p>
+        <hr color="red">
+        <h2><b>Spiced Paneer</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.270</span></h2>
+        <p class="w3-text-grey"></p><p>Spiced Paneer, onion and tomato</p>
+        <hr color="red">
+        <h2><b>Supreme Garlic Bread</b><span class="w3-tag w3-red w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.200</span></h2>
+        <p class="w3-text-grey"></p>
+        <hr color="red">
+        <h2><b>Garlic Bread Sticks</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.210</span></h2>
+        <p class="w3-text-grey"></p>
+        <hr color="red">
+        <h2><b>Potato Wedges</b>< <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.150</span></h2>
+        <p class="w3-text-grey"></p>
+        <hr color="red">
+
+        <h1 id="db" class="w3-center w3-white w3-padding-32">DESSERTS & BEVERAGES</h1>
+        <h2><b>Choco Volcano</b><span class="w3-tag w3-red w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.110</span></h2>
+        <p class="w3-text-grey"></p>
+        <hr color="red">
+        <h2><b>Choco Sundae/b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.110</span></h2>
+        <p class="w3-text-grey"></p>
+        <hr color="red">
+        <h2><b>Magnum Truffle</b> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.120</span></h2>
+        <p class="w3-text-grey"></p>
+        <hr color="red">
+        <h2><b>Thumbs Up/Fanta/Pepsi/Limca</b><span class="w3-tag w3-red w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">Rs.50</span></h2>
+        <p class="w3-text-grey"></p>
+        <hr color="red">
+
+    </div>
+</section>
+
+<section id="b4">
+    <div id="about" class="w3-container w3-black w3-xxlarge w3-padding-64">
+        <div class="w3-container w3-red w3-grayscale-min w3-xlarge w3-padding-top-32">
+            <h1 class="w3-center w3-jumbo">ABOUT US</h1>
+            <marquee direction="left" style="border:rgb(8, 8, 29) 2px SOLID">
+                <image src="img/t4.jpg" width="250" height="150"></image>
+                <image src="img/t1.jpg" width="150" height="150">
+                <image src="img/t7.jpg" width="250" height="150">
+                <image src="img/t8.jpg" width="250" height="150">
+            </marquee>
+            <br>  
+            <p>At Pizza Hut, we don’t just make pizza. We make people happy. Pizza Hut was built on the belief that pizza night should be special, and we carry that belief into everything we do. With more than 55 years of experience under our belts, we understand how to best serve our customers through tried and true service principles: We create food we’re proud to serve and deliver it fast, with a smile.</p>
+            <p> The restaurant brand offers an exciting menu consisting of its signature pizzas, appetizers, pastas, desserts and beverages. Its trademark dining experience has been recognized by Brand Equity to make it the ‘Most Trusted Food Service Brand’ for 11 years in a row. Pizza Hut is the most preferred pizza brand in India, given its freshest, tastiest and affordable Pizzas.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="b5">
+    <div id="contact" class="w3-container w3-black w3-xxlarge w3-padding-64">
+        <div class="w3-container w3-red w3-grayscale-min w3-xlarge w3-padding-top-32">
+            <h1 class="w3-center w3-jumbo">CONTACT US</h1>
+            <br>
+            <p>Contact us: 1234567890</p>
+            <p>Mail us: pizzahut@gmail.com</p>
+            <br>
+            <marquee direction="left" style="border:rgb(8, 8, 29) 2px SOLID">
+                BOOK  A  TABLE !!!
+            </marquee><br><br>
+            <form name="myForm" method="post"><br> 
+                <div>
+                    Name: <input type="text" name="fName" value="" size=20 maxlength=20 placeholder="Enter Name"><br><br>
+                    
+                    Number of Guests: <input type="number" name="nog" value="" ><br><br>
+                    
+                    Date of Reservation: <input type="date" name="dor" placeholder="dd-mm-yyyy" value="" min="2022-05-01" max="2022-06-01"></input> <br><br>
+                    
+                    Special Requests: <textarea name="sr"> </textarea> <br><br>
+                    
+                    Contact No: <input type="text" size=10 maxlength=10> </input> <br><br>
+                    
+                    Email ID: <input type="text" name="email-ID" placeholder="Enter Email-Id"> </input> <br><br>
+                    
+                    <input type="submit" name="Reserve" onclick="event.preventDefault(); validateForm();"> &nbsp;&nbsp;&nbsp; <input type="reset" name="reset">
+                </div>
+            </form>         
+        </div>
+    </div>
+</section>
+
+<!-- End Content -->
+
+    <script src="js/p10.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+</body>
+</html>
